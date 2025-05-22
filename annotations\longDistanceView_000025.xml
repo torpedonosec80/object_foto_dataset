@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation><filename>longDistanceView_000025.jpg</filename><size><width /><height /><depth>3</depth></size><object><name>shta-7m</name><pose>frontal</pose><truncated>0</truncated><difficult>0</difficult><bndbox><xmin>199</xmin><ymin>68</ymin><xmax>917</xmax><ymax>526</ymax></bndbox></object></annotation>
