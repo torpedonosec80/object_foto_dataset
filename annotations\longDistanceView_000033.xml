@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation><filename>longDistanceView_000033.jpg</filename><size><width /><height /><depth>3</depth></size><object><name>sv-5</name><pose>frontal</pose><truncated>1</truncated><difficult>0</difficult><bndbox><xmin>85</xmin><ymin>206</ymin><xmax>956</xmax><ymax>765</ymax></bndbox></object></annotation>
