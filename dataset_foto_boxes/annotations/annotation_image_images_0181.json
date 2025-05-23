@@ -1,0 +1,60 @@
+{
+    "filename": "image_images_0181.jpg",
+    "size": 56000,
+    "regions": [
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    256,
+                    231,
+                    231,
+                    263,
+                    442,
+                    442
+                ],
+                "all_points_y": [
+                    301,
+                    314,
+                    468,
+                    480,
+                    482,
+                    332
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-3",
+                "pose": "frontal",
+                "truncated": true,
+                "difficult": false
+            }
+        },
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    229,
+                    330,
+                    527,
+                    526,
+                    322,
+                    228
+                ],
+                "all_points_y": [
+                    535,
+                    532,
+                    536,
+                    744,
+                    767,
+                    713
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-9",
+                "pose": "unspecified",
+                "truncated": false,
+                "difficult": false
+            }
+        }
+    ]
+}
