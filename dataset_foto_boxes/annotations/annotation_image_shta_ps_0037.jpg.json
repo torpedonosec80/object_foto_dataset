@@ -1,0 +1,51 @@
+{
+    "filename": "image_shta_ps_0037.jpg",
+    "size": 68678,
+    "regions": [
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    130,
+                    263,
+                    287,
+                    354,
+                    388,
+                    471,
+                    550,
+                    539,
+                    524,
+                    519,
+                    469,
+                    111,
+                    109,
+                    100,
+                    103
+                ],
+                "all_points_y": [
+                    156,
+                    162,
+                    152,
+                    151,
+                    161,
+                    163,
+                    258,
+                    345,
+                    349,
+                    409,
+                    414,
+                    411,
+                    366,
+                    351,
+                    265
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-ps",
+                "pose": "unspecified",
+                "truncated": true,
+                "difficult": false
+            }
+        }
+    ]
+}
