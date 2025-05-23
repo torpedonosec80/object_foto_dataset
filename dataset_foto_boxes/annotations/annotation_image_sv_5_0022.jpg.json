@@ -1,0 +1,29 @@
+{
+    "filename": "image_sv_5_0022.jpg",
+    "size": 135679,
+    "regions": [
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    227,
+                    230,
+                    846,
+                    864
+                ],
+                "all_points_y": [
+                    143,
+                    443,
+                    457,
+                    128
+                ]
+            },
+            "region_attributes": {
+                "name": "sv-5",
+                "pose": "frontal",
+                "truncated": false,
+                "difficult": false
+            }
+        }
+    ]
+}
