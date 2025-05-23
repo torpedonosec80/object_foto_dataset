@@ -1,0 +1,116 @@
+{
+    "filename": "image_shta_ps_0016.jpg",
+    "size": 112609,
+    "regions": [
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    375,
+                    450,
+                    695,
+                    680,
+                    442,
+                    372
+                ],
+                "all_points_y": [
+                    20,
+                    15,
+                    32,
+                    270,
+                    283,
+                    220
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-9",
+                "pose": "unspecified",
+                "truncated": false,
+                "difficult": false
+            }
+        },
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    799,
+                    862,
+                    998,
+                    1015,
+                    941,
+                    939,
+                    894,
+                    886
+                ],
+                "all_points_y": [
+                    264,
+                    281,
+                    274,
+                    184,
+                    182,
+                    155,
+                    155,
+                    254
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-ps",
+                "pose": "unspecified",
+                "truncated": true,
+                "difficult": true
+            }
+        },
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    703,
+                    899,
+                    885,
+                    700
+                ],
+                "all_points_y": [
+                    36,
+                    48,
+                    251,
+                    268
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-9",
+                "pose": "unspecified",
+                "truncated": false,
+                "difficult": false
+            }
+        },
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    377,
+                    376,
+                    394,
+                    596,
+                    597,
+                    433,
+                    407
+                ],
+                "all_points_y": [
+                    265,
+                    417,
+                    446,
+                    422,
+                    279,
+                    290,
+                    257
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-3",
+                "pose": "frontal",
+                "truncated": true,
+                "difficult": false
+            }
+        }
+    ]
+}
