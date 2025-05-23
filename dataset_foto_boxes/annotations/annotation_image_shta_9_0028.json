@@ -1,0 +1,79 @@
+{
+    "filename": "image_shta_9_0028.jpg",
+    "size": 190028,
+    "regions": [
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    984,
+                    1220,
+                    1218,
+                    987
+                ],
+                "all_points_y": [
+                    309,
+                    304,
+                    482,
+                    485
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-3",
+                "pose": "frontal",
+                "truncated": false,
+                "difficult": false
+            }
+        },
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    655,
+                    659,
+                    933,
+                    934
+                ],
+                "all_points_y": [
+                    311,
+                    519,
+                    527,
+                    300
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-9m",
+                "pose": "frontal",
+                "truncated": false,
+                "difficult": false
+            }
+        },
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    298,
+                    312,
+                    533,
+                    593,
+                    588,
+                    508
+                ],
+                "all_points_y": [
+                    297,
+                    457,
+                    458,
+                    431,
+                    301,
+                    291
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-7m",
+                "pose": "frontal",
+                "truncated": false,
+                "difficult": false
+            }
+        }
+    ]
+}
