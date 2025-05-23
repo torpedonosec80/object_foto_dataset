@@ -1,0 +1,87 @@
+{
+    "filename": "image_shta_ps_0018.jpg",
+    "size": 167478,
+    "regions": [
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    567,
+                    667,
+                    670,
+                    780,
+                    783,
+                    864,
+                    940,
+                    935,
+                    591,
+                    566
+                ],
+                "all_points_y": [
+                    709,
+                    709,
+                    682,
+                    684,
+                    714,
+                    718,
+                    738,
+                    905,
+                    905,
+                    867
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-ps",
+                "pose": "frontal",
+                "truncated": false,
+                "difficult": false
+            }
+        },
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    74,
+                    71,
+                    506,
+                    510
+                ],
+                "all_points_y": [
+                    306,
+                    590,
+                    604,
+                    317
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-7m",
+                "pose": "frontal",
+                "truncated": false,
+                "difficult": false
+            }
+        },
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    67,
+                    63,
+                    535,
+                    534
+                ],
+                "all_points_y": [
+                    648,
+                    1025,
+                    1028,
+                    647
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-9m",
+                "pose": "frontal",
+                "truncated": false,
+                "difficult": false
+            }
+        }
+    ]
+}
