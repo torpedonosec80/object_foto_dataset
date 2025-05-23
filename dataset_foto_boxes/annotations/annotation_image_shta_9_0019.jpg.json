@@ -1,0 +1,29 @@
+{
+    "filename": "image_shta_9_0019.jpg",
+    "size": 85224,
+    "regions": [
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    42,
+                    519,
+                    492,
+                    93
+                ],
+                "all_points_y": [
+                    463,
+                    445,
+                    865,
+                    840
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-9",
+                "pose": "frontal",
+                "truncated": false,
+                "difficult": false
+            }
+        }
+    ]
+}
