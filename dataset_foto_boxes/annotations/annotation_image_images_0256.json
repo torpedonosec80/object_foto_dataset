@@ -1,0 +1,29 @@
+{
+    "filename": "image_images_0256.jpg",
+    "size": 286683,
+    "regions": [
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    43,
+                    33,
+                    901,
+                    865
+                ],
+                "all_points_y": [
+                    81,
+                    642,
+                    651,
+                    70
+                ]
+            },
+            "region_attributes": {
+                "name": "e2-6u",
+                "pose": "frontal",
+                "truncated": false,
+                "difficult": false
+            }
+        }
+    ]
+}
