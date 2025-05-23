@@ -1,0 +1,83 @@
+{
+    "filename": "image_images_0116.jpg",
+    "size": 220198,
+    "regions": [
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    188,
+                    198,
+                    635,
+                    693,
+                    694,
+                    625
+                ],
+                "all_points_y": [
+                    454,
+                    745,
+                    751,
+                    685,
+                    464,
+                    452
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-7m",
+                "pose": "frontal",
+                "truncated": false,
+                "difficult": false
+            }
+        },
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    787,
+                    790,
+                    1287,
+                    1300
+                ],
+                "all_points_y": [
+                    467,
+                    856,
+                    864,
+                    463
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-9m",
+                "pose": "frontal",
+                "truncated": false,
+                "difficult": false
+            }
+        },
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    1300,
+                    1295,
+                    1594,
+                    1595,
+                    1577,
+                    1333
+                ],
+                "all_points_y": [
+                    685,
+                    864,
+                    876,
+                    690,
+                    673,
+                    666
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-ps",
+                "pose": "frontal",
+                "truncated": true,
+                "difficult": true
+            }
+        }
+    ]
+}
