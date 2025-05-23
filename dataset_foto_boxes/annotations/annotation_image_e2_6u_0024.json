@@ -1,0 +1,29 @@
+{
+    "filename": "image_e2_6u_0024.jpeg",
+    "size": 240686,
+    "regions": [
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    18,
+                    52,
+                    1008,
+                    1018
+                ],
+                "all_points_y": [
+                    14,
+                    641,
+                    641,
+                    16
+                ]
+            },
+            "region_attributes": {
+                "name": "e2-6u",
+                "pose": "frontal",
+                "truncated": false,
+                "difficult": false
+            }
+        }
+    ]
+}
