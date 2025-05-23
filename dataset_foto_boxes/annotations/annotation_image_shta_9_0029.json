@@ -1,0 +1,72 @@
+{
+    "filename": "image_shta_9_0029.jpg",
+    "size": 113913,
+    "regions": [
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    623,
+                    600,
+                    577,
+                    494,
+                    583,
+                    992,
+                    1022,
+                    1110,
+                    1076,
+                    1056,
+                    1052
+                ],
+                "all_points_y": [
+                    4,
+                    37,
+                    38,
+                    148,
+                    521,
+                    574,
+                    572,
+                    167,
+                    29,
+                    31,
+                    4
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-9",
+                "pose": "unspecified",
+                "truncated": false,
+                "difficult": false
+            }
+        },
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    517,
+                    342,
+                    202,
+                    239,
+                    538,
+                    489,
+                    526
+                ],
+                "all_points_y": [
+                    95,
+                    93,
+                    215,
+                    340,
+                    366,
+                    143,
+                    101
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-ps",
+                "pose": "unspecified",
+                "truncated": true,
+                "difficult": true
+            }
+        }
+    ]
+}
