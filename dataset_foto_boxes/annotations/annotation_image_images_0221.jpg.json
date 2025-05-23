@@ -1,0 +1,33 @@
+{
+    "filename": "image_images_0221.jpg",
+    "size": 109819,
+    "regions": [
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    116,
+                    171,
+                    207,
+                    773,
+                    850,
+                    739
+                ],
+                "all_points_y": [
+                    316,
+                    838,
+                    909,
+                    781,
+                    319,
+                    285
+                ]
+            },
+            "region_attributes": {
+                "name": "shta-3",
+                "pose": "frontal",
+                "truncated": false,
+                "difficult": false
+            }
+        }
+    ]
+}
