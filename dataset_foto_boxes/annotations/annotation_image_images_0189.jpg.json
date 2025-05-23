@@ -1,0 +1,33 @@
+{
+    "filename": "image_images_0189.jpg",
+    "size": 159235,
+    "regions": [
+        {
+            "shape_attributes": {
+                "name": "polygon",
+                "all_points_x": [
+                    162,
+                    243,
+                    868,
+                    992,
+                    930,
+                    254
+                ],
+                "all_points_y": [
+                    132,
+                    564,
+                    603,
+                    150,
+                    127,
+                    107
+                ]
+            },
+            "region_attributes": {
+                "name": "",
+                "pose": "",
+                "truncated": false,
+                "difficult": false
+            }
+        }
+    ]
+}
