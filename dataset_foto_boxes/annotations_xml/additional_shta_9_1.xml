@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <filename>additional_shta_9_1.jpg</filename>
+  <size>
+    <width />
+    <height />
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>shta-9</name>
+    <pose>frontal</pose>
+    <truncated>1</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>9</xmin>
+      <ymin>654</ymin>
+      <xmax>596</xmax>
+      <ymax>1584</ymax>
+    </bndbox>
+  </object>
+</annotation>
