@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <filename>additional_shta_7m_2.jpg</filename>
+  <size>
+    <width />
+    <height />
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>shta-7m</name>
+    <pose>frontal</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>1452</xmin>
+      <ymin>214</ymin>
+      <xmax>3638</xmax>
+      <ymax>1688</ymax>
+    </bndbox>
+  </object>
+</annotation>
