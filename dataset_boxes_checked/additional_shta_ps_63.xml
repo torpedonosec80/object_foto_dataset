@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <filename>additional_shta_ps_63.jpg</filename>
+  <size>
+    <width />
+    <height />
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>shta-ps</name>
+    <pose>frontal</pose>
+    <truncated>1</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>695</xmin>
+      <ymin>551</ymin>
+      <xmax>1274</xmax>
+      <ymax>925</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>shta-9</name>
+    <pose>frontal</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>0</xmin>
+      <ymin>338</ymin>
+      <xmax>635</xmax>
+      <ymax>966</ymax>
+    </bndbox>
+  </object>
+</annotation>
