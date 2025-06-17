@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <filename>additional_sv5_7.jpeg</filename>
+  <size>
+    <width />
+    <height />
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>sv-5</name>
+    <pose>frontal</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>156</xmin>
+      <ymin>197</ymin>
+      <xmax>687</xmax>
+      <ymax>988</ymax>
+    </bndbox>
+  </object>
+</annotation>
