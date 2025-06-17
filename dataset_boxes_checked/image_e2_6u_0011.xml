@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img_check</folder>
+	<filename>image_e2_6u_0011.jpeg</filename>
+	<path>C:\Users\MAFirsov\Documents\github_repo_foto\torpedonosec80-object_foto_dataset-e206c86\dataset_foto_boxes_check\img_check\image_e2_6u_0011.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1024</width>
+		<height>768</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>e2-6u</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>77</ymin>
+			<xmax>1022</xmax>
+			<ymax>685</ymax>
+		</bndbox>
+	</object>
+</annotation>
