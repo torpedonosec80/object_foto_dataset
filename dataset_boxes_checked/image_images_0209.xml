@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation><filename>image_images_0209.jpg</filename><size><width /><height /><depth>3</depth></size><object><name>shta-3</name><pose>frontal</pose><truncated>0</truncated><difficult>0</difficult><bndbox><xmin>86</xmin><ymin>331</ymin><xmax>808</xmax><ymax>865</ymax></bndbox></object></annotation>
