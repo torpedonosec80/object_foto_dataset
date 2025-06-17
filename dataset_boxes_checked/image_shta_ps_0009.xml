@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation><filename>image_shta_ps_0009.jpg</filename><size><width /><height /><depth>3</depth></size><object><name>shta-ps</name><pose>profile</pose><truncated>1</truncated><difficult>0</difficult><bndbox><xmin>4</xmin><ymin>1491</ymin><xmax>2535</xmax><ymax>3426</ymax></bndbox></object></annotation>
