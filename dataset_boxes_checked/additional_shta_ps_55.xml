@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <filename>additional_shta_ps_55.jpg</filename>
+  <size>
+    <width />
+    <height />
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>shta-ps</name>
+    <pose>frontal</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>60</xmin>
+      <ymin>305</ymin>
+      <xmax>824</xmax>
+      <ymax>771</ymax>
+    </bndbox>
+  </object>
+</annotation>
