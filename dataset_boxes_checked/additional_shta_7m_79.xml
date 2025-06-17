@@ -1,0 +1,26 @@
+<annotation>
+	<folder>img_check</folder>
+	<filename>additional_shta_7m_79.jpeg</filename>
+	<path>C:\Users\MAFirsov\Documents\github_repo_foto\torpedonosec80-object_foto_dataset-e206c86\dataset_foto_boxes_check\img_check\additional_shta_7m_79.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2016</width>
+		<height>1512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>shta-7m</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>674</xmin>
+			<ymin>221</ymin>
+			<xmax>1436</xmax>
+			<ymax>1291</ymax>
+		</bndbox>
+	</object>
+</annotation>
