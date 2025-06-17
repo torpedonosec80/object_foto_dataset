@@ -1,0 +1,26 @@
+<annotation>
+	<folder>add_new_images</folder>
+	<filename>add_step2_e2_6u_15.jpeg</filename>
+	<path>C:\Users\MAFirsov\Documents\via-2.0.12\foto-experiments\дополнительные фото\переработка\e2_6u\add_new_images\add_step2_e2_6u_15.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1024</width>
+		<height>768</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>e2-6u</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>102</xmin>
+			<ymin>189</ymin>
+			<xmax>937</xmax>
+			<ymax>752</ymax>
+		</bndbox>
+	</object>
+</annotation>
