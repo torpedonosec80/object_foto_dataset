@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation><filename>image_images_0022.jpg</filename><size><width /><height /><depth>3</depth></size><object><name>sv-5</name><pose>unspecified</pose><truncated>1</truncated><difficult>1</difficult><bndbox><xmin>14</xmin><ymin>6</ymin><xmax>938</xmax><ymax>1242</ymax></bndbox></object></annotation>
