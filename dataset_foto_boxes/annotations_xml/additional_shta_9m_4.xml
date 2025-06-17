@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+  <filename>additional_shta_9m_4.jpg</filename>
+  <size>
+    <width />
+    <height />
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>shta-7m</name>
+    <pose>frontal</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>216</xmin>
+      <ymin>183</ymin>
+      <xmax>953</xmax>
+      <ymax>694</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>shta-9m</name>
+    <pose>frontal</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>207</xmin>
+      <ymin>754</ymin>
+      <xmax>937</xmax>
+      <ymax>1425</ymax>
+    </bndbox>
+  </object>
+</annotation>
