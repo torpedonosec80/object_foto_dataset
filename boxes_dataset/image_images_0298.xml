@@ -1,0 +1,26 @@
+<annotation verified="yes">
+	<folder>img_check</folder>
+	<filename>image_images_0298.jpg</filename>
+	<path>C:\Users\MAFirsov\Documents\github_repo_foto\torpedonosec80-object_foto_dataset-e206c86\dataset_foto_boxes_check\img_check\image_images_0298.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>2457</width>
+		<height>2977</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>shta-3</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>658</xmin>
+			<ymin>36</ymin>
+			<xmax>1799</xmax>
+			<ymax>1026</ymax>
+		</bndbox>
+	</object>
+</annotation>

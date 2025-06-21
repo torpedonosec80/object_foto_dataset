@@ -1,0 +1,26 @@
+<annotation verified="yes">
+	<folder>img_check</folder>
+	<filename>additional_sv5_3.jpg</filename>
+	<path>C:\Users\MAFirsov\Documents\github_repo_foto\torpedonosec80-object_foto_dataset-e206c86\dataset_foto_boxes_check\img_check\additional_sv5_3.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>901</width>
+		<height>1600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sv-5</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>71</xmin>
+			<ymin>126</ymin>
+			<xmax>870</xmax>
+			<ymax>1281</ymax>
+		</bndbox>
+	</object>
+</annotation>
