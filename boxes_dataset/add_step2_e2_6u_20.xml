@@ -1,0 +1,26 @@
+<annotation verified="yes">
+	<folder>boxes_dataset</folder>
+	<filename>add_step2_e2_6u_20.jpeg</filename>
+	<path>C:\Users\Михаил\Documents\netology_ds\object_foto_dataset\boxes_dataset\add_step2_e2_6u_20.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1024</width>
+		<height>768</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>e2-6u</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>142</xmin>
+			<ymin>112</ymin>
+			<xmax>896</xmax>
+			<ymax>602</ymax>
+		</bndbox>
+	</object>
+</annotation>
