@@ -1,7 +1,8 @@
 from ultralytics import YOLO
 import os
+import torch
 
-def run_train_model(model_weights, YOLO_DATA_DIR, NUM_EPOCHS, BATCH_SIZE):
+def run_train_model(model_weights, YOLO_DATA_DIR, NUM_EPOCHS, BATCH_SIZE, DEVICE):
   # Инициализация модели. Используем детекционную модель
   model = YOLO(model_weights) 
     
@@ -11,7 +12,7 @@ def run_train_model(model_weights, YOLO_DATA_DIR, NUM_EPOCHS, BATCH_SIZE):
       'epochs': NUM_EPOCHS,
       'batch': BATCH_SIZE,
       'imgsz': 640,
-      'device': '0' if torch.cuda.is_available() else 'cpu',
+      'device': DEVICE,
       'workers': 2,
       'name': 'yolo_object_detection'
   }
