@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from tqdm import tqdm
 
 
-def convert_annotations_to_yolo_format(data_dir, output_dir, subsets, CLASSES):
+def convert_annotations_to_yolo_format(data_dir, output_dir, subsets, CLASSES, CLASS_NAME_TO_ID):
     """
     Конвертирует XML аннотации в формат YOLO и создает структуру директорий
     """
