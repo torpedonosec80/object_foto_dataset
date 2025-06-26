@@ -1,29 +1,41 @@
-# evaluation.py
 import os
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
 import cv2
-from pathlib import Path
-from ultralytics import YOLO
-from config import CLASSES
+import torch
+import numpy as np
 import pandas as pd
 from tqdm import tqdm
+from config import CLASSES, DEVICE
 
-def evaluate_model(model, data_yaml, split='test'):
-    results = model.val(
-        data=data_yaml,
-        split=split,
-        name='yolo_test_evaluation'
-    )
+def evaluate_ssd_model(model, data_loader):
+    """Оценка модели SSD"""
+    model.eval()
+    results = []
     
-    print(f'\n=== YOLO Test Results ===')
-    print(f'mAP50-95: {results.box.map:.4f}')
-    print(f'mAP50: {results.box.map50:.4f}')
-    print(f'mAP75: {results.box.map75:.4f}')
+    with torch.no_grad():
+        for images, targets in tqdm(data_loader, desc="Evaluating"):
+            images = [img.to(DEVICE) for img in images]
+            outputs = model(images)
+            
+            for i, output in enumerate(outputs):
+                img_file = targets[i]['image_id']
+                boxes = output['boxes'].cpu().numpy()
+                scores = output['scores'].cpu().numpy()
+                labels = output['labels'].cpu().numpy()
+                
+                for box, score, label in zip(boxes, scores, labels):
+                    results.append({
+                        'image_file': img_file,
+                        'class_id': label,
+                        'class_name': CLASSES[label],
+                        'confidence': score,
+                        'x1': box[0], 'y1': box[1],
+                        'x2': box[2], 'y2': box[3]
+                    })
     
-    return results
+    return pd.DataFrame(results)
 
-def visualize_predictions(model, dataset_dir, num_samples=5, conf=0.5, save_path='yolo_predictions.png'):
+def visualize_ssd_predictions(model, dataset, num_samples=5, conf=0.5, save_path='ssd_predictions.png'):
+    """Визуализация предсказаний SSD"""
     test_images_dir = os.path.join(dataset_dir, 'test', 'images')
     image_files = [f for f in os.listdir(test_images_dir) if f.endswith(('.jpg', '.jpeg', '.png'))][:num_samples]
     
