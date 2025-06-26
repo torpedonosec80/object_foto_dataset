@@ -8,6 +8,7 @@ from tqdm import tqdm
 from sklearn.model_selection import train_test_split
 import pandas as pd
 from PIL import Image
+from pathlib import Path
 from config import CLASS_NAME_TO_ID, CLASSES
 
 def convert_annotations_to_yolo_format(data_dir, output_dir, subsets):
