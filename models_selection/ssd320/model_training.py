@@ -105,7 +105,7 @@ def train_ssd_model(data_dir, epochs=30, batch_size=8):
     train_dataset = CustomVOCDataset(
         root_dir=os.path.join(data_dir, 'train'),
         image_set='train',
-        transform=get_transform(train=True)
+        transform=get_transform(train=True))
     
     val_dataset = CustomVOCDataset(
         root_dir=os.path.join(data_dir, 'val'),
