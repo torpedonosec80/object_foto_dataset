@@ -73,3 +73,23 @@ def view_images_from_folder(folder_path, num_samples=5, max_cols=3,
     plt.tight_layout(pad=3.0)
     plt.show()
     print(f"Showing {num_samples}/{len(image_files)} images from {folder_path}")
+
+def save_metrics_report(df_class_report, overall_metrics, file_path="metrics_report.txt"):
+    """
+    Сохраняет отчет о метриках в текстовый файл
+    
+    Параметры:
+    df_class_report (DataFrame): Отчет по классам
+    overall_metrics (dict): Общие метрики
+    file_path (str): Путь для сохранения файла
+    """
+    with open(file_path, 'w') as f:
+        f.write("=== Отчет по классам ===\n")
+        f.write(df_class_report.to_string())
+        
+        f.write("\n\n=== Общие метрики ===\n")
+        for metric, value in overall_metrics.items():
+            f.write(f"{metric}: {value:.4f}\n")
+    
+    print(f"Отчет о метриках сохранен в {file_path}")
+    return file_path
