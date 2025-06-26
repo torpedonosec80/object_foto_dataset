@@ -6,7 +6,7 @@ import cv2
 import yaml
 from tqdm import tqdm
 from sklearn.model_selection import train_test_split
-from config import CLASS_NAME_TO_ID
+from config import CLASS_NAME_TO_ID, CLASSES
 
 def convert_annotations_to_yolo_format(data_dir, output_dir, subsets):
     os.makedirs(output_dir, exist_ok=True)
