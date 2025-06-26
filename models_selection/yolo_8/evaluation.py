@@ -5,7 +5,7 @@ import matplotlib.patches as patches
 import cv2
 from pathlib import Path
 from ultralytics import YOLO
-from .config import CLASSES
+from config import CLASSES
 
 def evaluate_model(model, data_yaml, split='test'):
     results = model.val(
