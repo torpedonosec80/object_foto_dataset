@@ -4,7 +4,7 @@ import shutil
 from pathlib import Path
 from ultralytics import YOLO
 import torch
-from .config import DEFAULT_SAVE_DIR
+from config import DEFAULT_SAVE_DIR
 
 def train_yolo_model(data_yaml, epochs=30, batch_size=8, model_size='n', device=None):
     if device is None:
