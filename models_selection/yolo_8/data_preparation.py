@@ -6,6 +6,8 @@ import cv2
 import yaml
 from tqdm import tqdm
 from sklearn.model_selection import train_test_split
+import pandas as pd
+from PIL import Image
 from config import CLASS_NAME_TO_ID, CLASSES
 
 def convert_annotations_to_yolo_format(data_dir, output_dir, subsets):
@@ -93,3 +95,54 @@ def convert_annotations_to_yolo_format(data_dir, output_dir, subsets):
             convert_single_annotation(img_name, 'val')
         elif i in test_idx:
             convert_single_annotation(img_name, 'test')
+
+def load_annotations(data_dir):
+    """
+    Загружает XML аннотации в DataFrame
+    """
+    annotations = []
+    
+    for xml_file in Path(data_dir).glob("*.xml"):
+        try:
+            tree = ET.parse(xml_file)
+            root = tree.getroot()
+            
+            filename = root.find('filename').text
+            img_path = Path(data_dir) / filename
+            
+            if not img_path.exists():
+                continue
+                
+            with Image.open(img_path) as img:
+                width, height = img.size
+                
+            for obj in root.findall('object'):
+                class_name = obj.find('name').text
+                bbox = obj.find('bndbox')
+                
+                xmin = int(bbox.find('xmin').text)
+                ymin = int(bbox.find('ymin').text)
+                xmax = int(bbox.find('xmax').text)
+                ymax = int(bbox.find('ymax').text)
+                
+                annotations.append({
+                    'image': filename,
+                    'class': class_name,
+                    'img_w': width,
+                    'img_h': height,
+                    'xmin': xmin,
+                    'ymin': ymin,
+                    'xmax': xmax,
+                    'ymax': ymax
+                })
+                
+        except Exception as e:
+            print(f"Error processing {xml_file}: {str(e)}")
+            
+    df = pd.DataFrame(annotations)
+    if not df.empty:
+        df['bbox_w'] = df['xmax'] - df['xmin']
+        df['bbox_h'] = df['ymax'] - df['ymin']
+        df['bbox_area'] = df['bbox_w'] * df['bbox_h']
+        
+    return df
