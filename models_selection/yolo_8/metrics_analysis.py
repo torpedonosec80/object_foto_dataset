@@ -4,6 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from glob import glob
 import os
+from pathlib import Path
 
 def plot_training_metrics(experiment_name="yolo_object_detection"):
     experiment_dir = Path("runs/detect") / experiment_name
