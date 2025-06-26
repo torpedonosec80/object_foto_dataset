@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import os
 import cv2
 from pathlib import Path
-from .config import CLASS_NAME_TO_ID
+from config import CLASS_NAME_TO_ID
 
 def calculate_iou(boxA, boxB):
     xA = max(boxA[0], boxB[0])
