@@ -2,6 +2,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 import os
 import cv2
 from pathlib import Path
@@ -179,3 +180,131 @@ def visualize_errors(comparison_df, source_dir):
         plt.close()
     
     return len(fp_images), len(fn_images)
+
+def calculate_f1_score(comparison_df):
+    """
+    Расчет F1-Score для каждого класса и общих метрик
+    
+    Параметры:
+    comparison_df (DataFrame): Результаты сравнения предсказаний с истиной
+    
+    Возвращает:
+    df_class_report (DataFrame): Отчет по классам
+    overall_metrics (dict): Общие метрики
+    """
+    # Уникальные классы
+    classes = comparison_df['true_class'].unique().tolist()
+    classes = [c for c in classes if c is not None]  # Удаляем None
+    
+    # Сбор статистики по классам
+    class_report = []
+    
+    for cls in classes:
+        # Фильтрация по классу
+        cls_data = comparison_df[comparison_df['true_class'] == cls]
+        
+        # Расчет метрик
+        TP = cls_data['matched'].sum()  # True Positives
+        FN = len(cls_data) - TP         # False Negatives
+        
+        # False Positives для класса (предсказания этого класса, но с ошибкой)
+        FP = len(comparison_df[
+            (comparison_df['pred_class'] == cls) & 
+            (comparison_df['true_class'] != cls)
+        ])
+        
+        # Рассчет Precision, Recall, F1
+        precision = TP / (TP + FP) if (TP + FP) > 0 else 0
+        recall = TP / (TP + FN) if (TP + FN) > 0 else 0
+        f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
+        
+        class_report.append({
+            'Class': cls,
+            'TP': TP,
+            'FP': FP,
+            'FN': FN,
+            'Precision': precision,
+            'Recall': recall,
+            'F1-Score': f1
+        })
+    
+    # Создание DataFrame с результатами по классам
+    df_class_report = pd.DataFrame(class_report)
+    
+    # Общие метрики (микро-усреднение)
+    total_TP = df_class_report['TP'].sum()
+    total_FP = df_class_report['FP'].sum()
+    total_FN = df_class_report['FN'].sum()
+    
+    micro_precision = total_TP / (total_TP + total_FP) if (total_TP + total_FP) > 0 else 0
+    micro_recall = total_TP / (total_TP + total_FN) if (total_TP + total_FN) > 0 else 0
+    micro_f1 = 2 * (micro_precision * micro_recall) / (micro_precision + micro_recall) if (micro_precision + micro_recall) > 0 else 0
+    
+    # Макро-усреднение F1
+    macro_f1 = df_class_report['F1-Score'].mean()
+    
+    # Общие метрики
+    overall_metrics = {
+        'Micro Precision': micro_precision,
+        'Micro Recall': micro_recall,
+        'Micro F1-Score': micro_f1,
+        'Macro F1-Score': macro_f1
+    }
+    
+    return df_class_report, overall_metrics
+
+def visualize_f1_metrics(df_class_report, overall_metrics, save_dir="."):
+    """
+    Визуализация метрик F1-Score
+    
+    Параметры:
+    df_class_report (DataFrame): Отчет по классам
+    overall_metrics (dict): Общие метрики
+    save_dir (str): Директория для сохранения графиков
+    """
+    # График F1-Score по классам
+    plt.figure(figsize=(12, 6))
+    plt.bar(df_class_report['Class'], df_class_report['F1-Score'], color='skyblue')
+    plt.axhline(y=overall_metrics['Macro F1-Score'], color='r', linestyle='--', label='Macro F1-Score')
+    plt.title('F1-Score по классам')
+    plt.xlabel('Класс')
+    plt.ylabel('F1-Score')
+    plt.ylim(0, 1)
+    plt.legend()
+    plt.xticks(rotation=45)
+    plt.grid(axis='y', alpha=0.3)
+    plt.tight_layout()
+    plt.savefig(os.path.join(save_dir, 'f1_by_class.png'))
+    plt.show()
+    
+    # Тепловая карта метрик
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(df_class_report[['Precision', 'Recall', 'F1-Score']], 
+                annot=True, fmt=".2f", cmap="YlGnBu",
+                xticklabels=['Precision', 'Recall', 'F1-Score'],
+                yticklabels=df_class_report['Class'])
+    plt.title('Метрики по классам')
+    plt.tight_layout()
+    plt.savefig(os.path.join(save_dir, 'metrics_heatmap.png'))
+    plt.show()
+    
+    # Дополнительный график: Precision-Recall по классам
+    plt.figure(figsize=(10, 8))
+    for i, row in df_class_report.iterrows():
+        plt.scatter(row['Recall'], row['Precision'], s=100, label=row['Class'])
+        plt.text(row['Recall'], row['Precision']+0.01, row['Class'], fontsize=9)
+    
+    plt.xlabel('Recall')
+    plt.ylabel('Precision')
+    plt.title('Precision-Recall по классам')
+    plt.grid(True)
+    plt.xlim(0, 1.05)
+    plt.ylim(0, 1.05)
+    plt.savefig(os.path.join(save_dir, 'precision_recall.png'))
+    plt.show()
+    
+    return {
+        'f1_by_class': os.path.join(save_dir, 'f1_by_class.png'),
+        'metrics_heatmap': os.path.join(save_dir, 'metrics_heatmap.png'),
+        'precision_recall': os.path.join(save_dir, 'precision_recall.png')
+    }
