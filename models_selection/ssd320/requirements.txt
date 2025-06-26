@@ -1,1 +1,3 @@
 !pip install -U torchvision --quiet
+
+!pip install -q torchmetrics
