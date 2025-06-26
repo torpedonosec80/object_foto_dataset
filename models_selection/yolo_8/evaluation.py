@@ -6,6 +6,8 @@ import cv2
 from pathlib import Path
 from ultralytics import YOLO
 from config import CLASSES
+import pandas as pd
+from tqdm import tqdm
 
 def evaluate_model(model, data_yaml, split='test'):
     results = model.val(
@@ -81,3 +83,72 @@ def visualize_predictions(model, dataset_dir, num_samples=5, conf=0.5, save_path
     plt.savefig(save_path)
     plt.show()
     return save_path
+
+def run_detection_on_dataset(model, source_dir, conf_threshold=0.25):
+    """
+    Выполняет детекцию на всем датасете и возвращает результаты в DataFrame
+    """
+    image_extensions = ('.jpg', '.jpeg', '.png', '.JPG')
+    image_files = [f for f in os.listdir(source_dir) 
+                 if f.lower().endswith(image_extensions)]
+    
+    results_list = []
+    
+    for img_file in tqdm(image_files, desc="Running detection"):
+        img_path = os.path.join(source_dir, img_file)
+        img = cv2.imread(img_path)
+        
+        if img is None:
+            continue
+            
+        height, width = img.shape[:2]
+        
+        # Выполняем предсказание
+        predictions = model.predict(
+            source=img_path,
+            conf=conf_threshold,
+            save=False,
+            imgsz=640
+        )
+        
+        result = predictions[0]
+        
+        if result.boxes is not None:
+            boxes = result.boxes.xyxy.cpu().numpy()
+            clss = result.boxes.cls.cpu().numpy()
+            confs = result.boxes.conf.cpu().numpy()
+            
+            for box, cls_id, conf_val in zip(boxes, clss, confs):
+                class_name = model.names[int(cls_id)]
+                x1, y1, x2, y2 = box
+                
+                results_list.append({
+                    'image_file': img_file,
+                    'class_id': int(cls_id),
+                    'class_name': class_name,
+                    'confidence': conf_val,
+                    'x1': x1, 'y1': y1, 'x2': x2, 'y2': y2,
+                    'width': x2 - x1,
+                    'height': y2 - y1,
+                    'rel_x1': x1 / width,
+                    'rel_y1': y1 / height,
+                    'rel_x2': x2 / width,
+                    'rel_y2': y2 / height,
+                    'rel_width': (x2 - x1) / width,
+                    'rel_height': (y2 - y1) / height
+                })
+        else:
+            # Запись для изображений без детекций
+            results_list.append({
+                'image_file': img_file,
+                'class_id': None,
+                'class_name': None,
+                'confidence': None,
+                'x1': None, 'y1': None, 'x2': None, 'y2': None,
+                'width': None, 'height': None,
+                'rel_x1': None, 'rel_y1': None,
+                'rel_x2': None, 'rel_y2': None,
+                'rel_width': None, 'rel_height': None
+            })
+    
+    return pd.DataFrame(results_list)
