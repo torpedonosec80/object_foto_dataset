@@ -288,18 +288,72 @@ def visualize_f1_metrics(df_class_report, overall_metrics, save_dir="."):
     plt.savefig(os.path.join(save_dir, 'metrics_heatmap.png'))
     plt.show()
     
-    # Дополнительный график: Precision-Recall по классам
+    # Дополнительный график: Precision-Recall по классам (улучшенный)
     plt.figure(figsize=(10, 8))
-    for i, row in df_class_report.iterrows():
-        plt.scatter(row['Recall'], row['Precision'], s=100, label=row['Class'])
-        plt.text(row['Recall'], row['Precision']+0.01, row['Class'], fontsize=9)
     
-    plt.xlabel('Recall')
-    plt.ylabel('Precision')
+    # Определяем динамические границы
+    min_precision = df_class_report['Precision'].min()
+    min_recall = df_class_report['Recall'].min()
+    max_precision = df_class_report['Precision'].max()
+    max_recall = df_class_report['Recall'].max()
+    
+    # Рассчитываем буфер (5% от диапазона или 5 единиц для процентов)
+    buffer = 0.05
+    buffer = max(0.01, buffer)
+    
+    # Устанавливаем границы осей с буфером
+    x_min = max(0, min_recall - buffer)
+    x_max = min(1.0, max_recall + buffer)
+    y_min = max(0, min_precision - buffer)
+    y_max = min(1.0, max_precision + buffer)
+    
+    # Для случаев, когда все значения близки к 100% (или 1.0)
+    if x_min > (0.95) and y_min > (0.95):
+        x_min = 0.95
+        y_min = 0.95
+        buffer = 0.01
+    
+    # Создаем scatter plot с адаптивными осями
+    for i, row in df_class_report.iterrows():
+        plt.scatter(row['Recall'], row['Precision'], s=120, edgecolors='black')
+        plt.text(
+            row['Recall'], 
+            row['Precision'] + ( 0.005), 
+            f"{row['Class']}\n({row['F1-Score']:.4f}{''})", 
+            fontsize=10,
+            ha='center',
+            va='bottom',
+            bbox=dict(facecolor='white', alpha=0.8, edgecolor='none', boxstyle='round,pad=0.3')
+        )
+    
+    # Настройка осей и сетки
+    plt.xlabel(f'Recall')
+    plt.ylabel(f'Precision')
     plt.title('Precision-Recall по классам')
-    plt.grid(True)
-    plt.xlim(0, 1.05)
-    plt.ylim(0, 1.05)
+    plt.grid(True, linestyle='--', alpha=0.3)
+    
+    # Устанавливаем динамические границы
+    plt.xlim(x_min, x_max)
+    plt.ylim(y_min, y_max)
+    
+    # Добавляем диагональ для визуальной оценки
+    plt.plot([x_min, x_max], [y_min, y_max], 'k--', alpha=0.2)
+    
+    # Добавляем изолинии F1-Score
+    for f1 in [0.85, 0.90, 0.95]:
+        x = np.linspace(x_min, x_max, 100)
+        y = f1 * x / (2 * x - f1)
+        # Фильтруем недопустимые значения
+        valid = (y >= y_min) & (y <= y_max) & (y > 0)
+        if any(valid):
+            plt.plot(x[valid], y[valid], 'r--', alpha=0.3, linewidth=0.8)
+            # Подпись изолинии
+            label_x = np.max(x[valid]) - (0.01 * (x_max - x_min))
+            label_y = np.min(y[valid]) + (0.01 * (y_max - y_min))
+            plt.text(label_x, label_y, f"F1={f1}{''}", 
+                        color='red', fontsize=8, ha='right')
+    
+    plt.tight_layout()
     plt.savefig(os.path.join(save_dir, 'precision_recall.png'))
     plt.show()
     
