@@ -15,5 +15,9 @@ NUM_CLASSES = len(CLASSES)
 
 # Пути по умолчанию
 DEFAULT_DATA_DIR = "/content/object_foto_dataset/boxes_dataset"
-DEFAULT_YOLO_DIR = "/content/yolo_dataset"
+DEFAULT_SSD_DIR = "/content/ssd_dataset"
 DEFAULT_SAVE_DIR = "saved_models"
+
+# Параметры SSD
+SSD_WEIGHTS = "SSDLite320_MobileNet_V3_Large_Weights.DEFAULT"
+DEVICE = "cuda"  # or "cpu"
