@@ -179,7 +179,7 @@ def visualize_errors(comparison_df, source_dir):
         plt.savefig(save_path, bbox_inches='tight')
         plt.close()
     
-    return len(fp_images), len(fn_images)
+    return fp_images, fn_images
 
 def calculate_f1_score(comparison_df):
     """
